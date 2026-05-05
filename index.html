@@ -7,41 +7,31 @@
 
 <style>
 :root {
-    --primary: #0f172a;
-    --accent: #14b8a6;
-    --bg: linear-gradient(135deg, #0ea5e9, #14b8a6, #0f172a);
+    --primary: #020617;
+    --accent: #22c55e;
+    --bg: #020617; /* deep navy */
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg);
-    color: #1f2937;
+    color: #e5e7eb;
 }
 
 header, footer {
     position: fixed;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: rgba(2, 6, 23, 0.95);
     color: white;
     text-align: center;
     z-index: 1000;
 }
 
-header {
-    top: 0;
-    padding: 15px;
-}
-
-footer {
-    bottom: 0;
-    padding: 10px;
-    font-size: 14px;
-}
+header { top: 0; padding: 15px; }
+footer { bottom: 0; padding: 10px; font-size: 14px; }
 
 .container {
     max-width: 1000px;
@@ -50,17 +40,22 @@ footer {
 }
 
 section {
-    background: white;
+    background: #0f172a;
     padding: 25px;
     border-radius: 12px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    animation: fadeIn 0.8s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
 }
 
-.hero {
-    text-align: center;
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
+
+.hero { text-align: center; }
 
 .hero img {
     width: 150px;
@@ -68,14 +63,9 @@ section {
     margin-bottom: 10px;
 }
 
-h1 {
-    margin: 10px 0;
-    text-align: center;
-}
+h1 { margin: 10px 0; text-align: center; }
 
-h2 {
-    color: var(--primary);
-}
+h2 { color: #22c55e; }
 
 .button {
     display: inline-block;
@@ -94,32 +84,23 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+    .grid { grid-template-columns: 1fr; }
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px);} 
-    to { opacity: 1; transform: translateY(0);} 
-}
-
+/* Achievement animation */
 .achievement {
     opacity: 0;
-    transform: translateX(-30px);
-    animation: slideIn 0.8s forwards;
+    transform: translateX(-40px);
+    transition: all 0.6s ease;
+}
+
+.achievement.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .achievement:nth-child(even) {
-    transform: translateX(30px);
-}
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    transform: translateX(40px);
 }
 
 form input, form textarea {
@@ -127,7 +108,7 @@ form input, form textarea {
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
 }
 
 form button {
@@ -169,7 +150,7 @@ form button {
     <div class="achievement">• Contributed to a 54.46% revenue increase</div>
     <div class="achievement">• Improved customer engagement by 35%+</div>
     <div class="achievement">• Maintained response time under 5 minutes</div>
-    <div class="achievement">• 98% client onboarding success rate</div>
+    <div class="achievement">• 100% client onboarding success rate</div>
 </section>
 
 <section>
@@ -195,7 +176,6 @@ form button {
 </section>
 
 <section>
-    <h2>Profile</h2>
     <img src="Peak 1d.png" style="width:100%; border-radius:10px;">
 </section>
 
@@ -216,17 +196,32 @@ form button {
 </section>
 
 <section>
-    <h2>Let's work together</h2>
     <img src="Peak(2).png" style="width:100%; border-radius:10px;">
 </section>
 
 </div>
 
 <footer>
-    © 2026 Azubuike Uwuma Black | Open to Hybrid and Remote Opportunities
+    © 2026 Azubuike Uwuma Black | Open to Remote Opportunities
 </footer>
+
+<script>
+// Scroll animation trigger
+const sections = document.querySelectorAll('section');
+const achievements = document.querySelectorAll('.achievement');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+
+sections.forEach(sec => observer.observe(sec));
+achievements.forEach(item => observer.observe(item));
+</script>
 
 </body>
 </html>
-
 
