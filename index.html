@@ -3,176 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uwuma Black Azubuike | Portfolio</title>
+<title>Azubuike Uwuma Black | Portfolio</title>
+
 <style>
+:root {
+    --primary: #0f172a;
+    --accent: #14b8a6;
+    --bg: linear-gradient(135deg, #0ea5e9, #14b8a6, #0f172a);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #333;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: #1f2937;
 }
 
 header, footer {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  background: #1f3a5f;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  z-index: 1000;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    color: white;
+    text-align: center;
+    z-index: 1000;
 }
 
-header { top: 0; }
-footer { bottom: 0; }
+header {
+    top: 0;
+    padding: 15px;
+}
 
-main {
-  padding: 100px 20px 80px;
-  max-width: 1000px;
-  margin: auto;
+footer {
+    bottom: 0;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 110px 20px 90px;
 }
 
 section {
-  margin-bottom: 50px;
-}
-
-h1, h2 {
-  color: #1f3a5f;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease;
 }
 
 .hero {
-  text-align: center;
+    text-align: center;
 }
 
 .hero img {
-  width: 180px;
-  border-radius: 50%;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+h2 {
+    color: var(--primary);
 }
 
 .button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #8b1e3f;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.card {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.images {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);} 
+    to { opacity: 1; transform: translateY(0);} 
 }
 
-.images img {
-  width: 200px;
-  border-radius: 10px;
+.achievement {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideIn 0.8s forwards;
+}
+
+.achievement:nth-child(even) {
+    transform: translateX(30px);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--accent);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
-  <strong>Uwuma Black Azubuike</strong>
+    <strong>Azubuike Uwuma Black | Customer Experience & Virtual Assistant</strong>
 </header>
 
-<main>
+<div class="container">
 
 <section class="hero">
-  <img src="Peak(1).png" alt="Profile Image">
-  <h1>Customer Experience | Virtual Administrative Assistant | Data Analyst in Training</h1>
-  <p>I help businesses stay organized, support their customers better, and keep operations running smoothly behind the scenes.</p>
-  <a href="mailto:uwumaazubuike@gmail.com" class="button">Hire Me</a>
+    <img src="Peak(1).png" alt="Profile Image">
+    <h1>Azubuike Uwuma Black</h1>
+    <p><strong>Customer Experience & Virtual Assistant</strong></p>
+    <p>I help businesses stay organized, support their customers better, and keep operations running smoothly behind the scenes.</p>
+    <a href="mailto:uwumaazubuike@gmail.com" class="button">Hire Me</a>
 </section>
 
 <section>
-  <h2>About Me</h2>
-  <p>I’m a customer-focused professional with experience in sales, operations, and virtual assistance. I enjoy helping businesses stay organized, supporting clients, and improving everyday processes. I’m reliable, detail-oriented, and always looking for better ways to get things done.</p>
-  <p>Over the past few years, I’ve worked across customer support, onboarding, and administrative roles, handling client communication, scheduling, data management, and process improvement while maintaining efficiency.</p>
+    <h2>About Me</h2>
+    <p>I’m a customer-focused professional with experience in sales, operations, and virtual assistance. I enjoy helping businesses stay organized, supporting clients, and improving everyday processes.</p>
 </section>
 
 <section>
-  <h2>Skills & Tools</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Hard Skills</h3>
-      <ul>
-        <li>Customer Support</li>
-        <li>CRM Management</li>
-        <li>Data Entry</li>
-        <li>Lead Generation</li>
-        <li>Data Analysis</li>
-      </ul>
+    <h2>Key Achievements</h2>
+    <div class="achievement">• Contributed to a 54.46% revenue increase</div>
+    <div class="achievement">• Improved customer engagement by 35%+</div>
+    <div class="achievement">• Maintained response time under 5 minutes</div>
+    <div class="achievement">• 100% client onboarding success rate</div>
+</section>
+
+<section>
+    <h2>Skills & Tools</h2>
+    <div class="grid">
+        <div>
+            <ul>
+                <li>Customer Support</li>
+                <li>CRM Management</li>
+                <li>Data Entry</li>
+                <li>Lead Generation</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Google Workspace</li>
+                <li>Notion</li>
+                <li>Canva</li>
+                <li>ClickUp</li>
+            </ul>
+        </div>
     </div>
-    <div class="card">
-      <h3>Soft Skills</h3>
-      <ul>
-        <li>Communication</li>
-        <li>Organization</li>
-        <li>Problem-solving</li>
-        <li>Time Management</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Tools</h3>
-      <ul>
-        <li>Google Workspace</li>
-        <li>Microsoft 365</li>
-        <li>AI Tools</li>
-        <li>Notion & ClickUp</li>
-      </ul>
-    </div>
-  </div>
 </section>
 
 <section>
-  <h2>Services</h2>
-  <ul>
-    <li>Virtual Administrative Support</li>
-    <li>Customer Support & Client Relations</li>
-    <li>Lead Generation</li>
-    <li>CRM Management</li>
-    <li>Data Entry</li>
-  </ul>
+    <h2>Top Image</h2>
+    <img src="Peak(1).png" style="width:100%; border-radius:10px;">
 </section>
 
 <section>
-  <h2>Experience</h2>
-  <p><strong>Abimoni Limited (2025)</strong> - Virtual Administrative Support</p>
-  <p><strong>BetaSms (2024)</strong> - Customer Support & Client Relations</p>
-</section>
+    <h2>Contact</h2>
+    <p>Email: uwumaazubuike@gmail.com</p>
+    <p>Phone: 08166593309</p>
+    <p>Location: Lagos, Nigeria</p>
+    <a href="https://www.linkedin.com/in/uwuma-azubuike-black-a531b2265" target="_blank" class="button">LinkedIn</a>
 
-<section class="images">
-  <img src="Peak(2).png" alt="Cartoon Image">
-  <img src="Peak 1d.png" alt="Professional Image">
+    <h3>Send a Message</h3>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
 </section>
 
 <section>
-  <h2>Contact</h2>
-  <p>Email: uwumaazubuike@gmail.com</p>
-  <p>Phone: +2348166593309</p>
-  <p>Location: Lagos, Nigeria</p>
-  <a href="https://www.linkedin.com/in/uwuma-azubuike-black-a531b2265" class="button" target="_blank">LinkedIn</a>
+    <h2>Bottom Image</h2>
+    <img src="Peak(2).png" style="width:100%; border-radius:10px;">
 </section>
 
-</main>
+</div>
 
 <footer>
-  Open to remote opportunities
+    © 2026 Azubuike Uwuma Black | Open to Hybrid and Remote Opportunities
 </footer>
 
 </body>
 </html>
+
+
