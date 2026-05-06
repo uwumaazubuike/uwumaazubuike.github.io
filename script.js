@@ -18,7 +18,7 @@ function getResponse(input) {
 
   // GREETING
   if (input.includes("hello") || input.includes("hi")) {
-    return `Hello, I’m the assistant for ${PROFILE.name}. I can help you learn about their experience, skills, or how to work with them. How can I assist you today?`;
+    return `Hello, I’m the assistant for ${PROFILE.name}. I can help you learn about her experience, skills, or how to work with her. How can I assist you today?`;
   }
 
   // WHO ARE YOU
@@ -28,7 +28,7 @@ function getResponse(input) {
 
   // WHAT DO YOU DO
   if (input.includes("what") && input.includes("do")) {
-    return `${PROFILE.name} helps businesses stay organized, manage daily operations, and improve processes. They handle customer support, scheduling, data management, and administrative coordination efficiently.`;
+    return `${PROFILE.name} helps businesses stay organized, manage daily operations, and improve processes. Uwuma handles customer support, scheduling, data management, and administrative coordination efficiently.`;
   }
 
   // SKILLS
@@ -92,7 +92,7 @@ function getResponse(input) {
   }
 
   // DEFAULT RESPONSE (SMART + GUIDED)
-  return "I can help you with skills, experience, services, or how to hire/contact Azubuike. What would you like to know?";
+  return "I can help you with skills, experience, services, or how to hire/contact Uwuma. What would you like to know?";
 }
 
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // PROFILE DATA
 const PROFILE = {
-  name: "Azubuike Uwuma Black",
+  name: "Uwuma Azubuike Black",
   location: "Lagos, Nigeria",
   experience: "2 years",
 
@@ -162,7 +162,7 @@ const PROFILE = {
   ],
 
   availability: {
-    message: "Yes, Azubuike is available for freelance, internship, part-time, and full-time opportunities."
+    message: "Yes, Uwuma is available for freelance, internship, part-time, and full-time opportunities."
   },
 
   contact: {
