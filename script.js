@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (chatBox) {
     let welcome = document.createElement("div");
     welcome.className = "message bot";
-    welcome.textContent = "Hi! Ask me about skills, experience, services, or how to hire Azubuike.";
+    welcome.textContent = "Hi! Ask me about skills, experience, services, or how to hire Uwuma.";
     chatBox.appendChild(welcome);
   }
 
