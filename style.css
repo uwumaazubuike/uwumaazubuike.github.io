@@ -111,3 +111,84 @@ form button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+* FORM */
+form input, form textarea {
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form textarea {
+  min-height: 100px;
+}
+
+form button {
+  padding: 12px;
+  width: 100%;
+  background: #0A66C2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #004182;
+}
+
+.chatbot-box {
+  max-width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+
+#chat-box {
+  height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 8px 0;
+}
+
+.user {
+  text-align: right;
+  color: #333;
+}
+
+.bot {
+  text-align: left;
+  color: #2c7be5;
+}
+
+.input-area {
+  display: flex;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-area button {
+  margin-left: 5px;
+  padding: 8px 12px;
+  background: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
