@@ -213,6 +213,11 @@ window.sendMessage = function () {
 
   let text = input.value.trim();
   if (text === "") return;
+    
+    <input type="text" id="user-input" placeholder="Type a message">
+<button onclick="sendMessage()">Send</button>
+
+<div id="chat-box"></div>
 
   // USER MESSAGE
   addMessage(text, "user");
